@@ -2,7 +2,7 @@
 # -*- coding=utf-8 -*-
 
 import json
-
+import sys
 
 ##外键更新规则
 def gente_row_format_rule():
@@ -512,7 +512,8 @@ def genete_index_sql(data,column_dic):
 
 if __name__ == '__main__':
 
-    filename="D:\\jsonfile\\tb_test.txt"
+    ##filename="D:\\jsonfile\\tb_test.txt"
+    filename = sys.argv[1]
 
     with open(filename, 'r', encoding='utf-8') as f:
         data = json.load(f)

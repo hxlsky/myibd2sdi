@@ -38,3 +38,16 @@ CREATE TABLE `model` (
 mysql> alter table model discard tablespace;
 Query OK, 0 rows affected (0.12 sec)
 ```
+这个时候该表对应的ibd文件会自动删除掉
+
+
+#### 5.关闭数据库
+`/opt/mysql8/bin/mysqladmin -h localhost -uroot -P13306 --socket=/opt/mysql8/mysql.sock -p shutdown`
+
+### 6.将不能启动的db对应的表ibd文件拷贝到正常的实例的目录下
+`cp /tmp/model.ibd /opt/mysql8/data/db_test/`
+
+文件传输到目标机器后,注意修改权限
+
+`chown -R mysql:mysql /opt/mysql8/data/db_test`
+

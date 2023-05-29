@@ -1,4 +1,4 @@
-# myibd2sdi
+# 使用步骤
 For Mysql 8
 #### 1.解析ibd文件
 /opt/mysql8/bin/ibd2sdi --dump-file=/tmp/cms_content.txt /tmp/model.ibd
@@ -28,4 +28,13 @@ CREATE TABLE `model` (
   KEY `idx_model_title` (`model_title`,`model_url`) USING BTREE,
   CONSTRAINT `fk_model_id` FOREIGN KEY (`model_id`) REFERENCES `model` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=1859 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='模块表';
+```
+
+### 3.在新环境创建表
+
+
+### 4.脱离表空间
+```c
+mysql> alter table model discard tablespace;
+Query OK, 0 rows affected (0.12 sec)
 ```

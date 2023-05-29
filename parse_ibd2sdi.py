@@ -4,7 +4,7 @@
 import json
 import sys
 
-##外键更新规则
+##外键更新规则语句
 def gente_row_format_rule():
     row_format_rule_dic={}
     row_format_rule_dic[2] = "DYNAMIC"

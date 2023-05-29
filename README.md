@@ -24,7 +24,6 @@ create table model(
     model_icon varchar(120) DEFAULT NULL COMMENT '模块图标',
     model_sort int DEFAULT NULL COMMENT '模块的排序',
     model_ismenu int DEFAULT '0' COMMENT '模块是否是菜单',
-    IS_CHILD varchar(300) DEFAULT NULL COMMENT '扩展字段',
     model_datetime datetime DEFAULT NULL,
     UPDATE_BY varchar(11) DEFAULT NULL COMMENT '更新人',
     UPDATE_DATE datetime DEFAULT NULL COMMENT '更新时间',
@@ -40,6 +39,7 @@ create table model(
 ```
 
 ### 3.在新环境创建表
+
 
 
 ### 4.脱离表空间

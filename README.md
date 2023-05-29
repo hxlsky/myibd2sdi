@@ -6,6 +6,12 @@ Mysql : Mysql 8
 Python:3.6以上版本
 
 
+###### 目的
+数据库实例无法启动的情况下，解析ibd文件，进行数据恢复  
+
+
+
+
 
 #### 1.解析ibd文件
 /opt/mysql8/bin/ibd2sdi --dump-file=/tmp/model.txt /tmp/model.ibd
@@ -57,7 +63,7 @@ Query OK, 0 rows affected (0.12 sec)
 ### 5.关闭数据库
 `/opt/mysql8/bin/mysqladmin -h localhost -uroot -P13306 --socket=/opt/mysql8/mysql.sock -p shutdown`
 
-### 6.将不能启动的db对应的表ibd文件拷贝到正常的实例的目录下
+### 6.将不能启动的实例下的表对应的ibd文件拷贝到正常的实例的相应目录下
 `cp /tmp/model.ibd /opt/mysql8/data/db_test/`
 
 文件传输到目标机器后,注意修改权限

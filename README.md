@@ -39,6 +39,8 @@ create table model(
 ```
 
 ### 3.在新环境创建表
+  
+
 
 
 
@@ -50,7 +52,7 @@ Query OK, 0 rows affected (0.12 sec)
 这个时候该表对应的ibd文件会自动删除掉
 
 
-#### 5.关闭数据库
+### 5.关闭数据库
 `/opt/mysql8/bin/mysqladmin -h localhost -uroot -P13306 --socket=/opt/mysql8/mysql.sock -p shutdown`
 
 ### 6.将不能启动的db对应的表ibd文件拷贝到正常的实例的目录下

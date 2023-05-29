@@ -51,3 +51,13 @@ Query OK, 0 rows affected (0.12 sec)
 
 `chown -R mysql:mysql /opt/mysql8/data/db_test`
 
+### 7.启动实例
+`/opt/mysql8/bin/mysqld_safe --defaults-file=/opt/mysql8/conf/my.cnf --user=mysql &`
+
+### 8.导入表空间
+`/opt/mysql8/bin/mysql -h localhost -uroot -P13306 --socket=/opt/mysql8/mysql.sock -p`
+
+```c
+mysql> alter table model import tablespace;
+Query OK, 0 rows affected, 1 warning (5.86 sec)
+```
